@@ -1,0 +1,3 @@
+[project]
+name = "groza_statistics"
+requires-python = ">=3.11.1,<3.11.2"
