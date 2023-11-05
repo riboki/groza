@@ -96,7 +96,7 @@ def distances_per_players(server, players: frozenset | None = None, quantile: fl
     if not players:
         players = get_players(server=server)
     return wipe_data[wipe_data["имя игрока"].isin(players)
-                     & (wipe_data["расстояние"] < wipe_data["расстояние"].quantile(quantile))][
+                     & (wipe_data["расстояние"] < 1_000)][
         ["имя игрока", "расстояние"]]
 
 
