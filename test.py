@@ -4,4 +4,4 @@ from groza_process import get_players, distances_per_players, get_kill_statistic
 # print(get_players())
 # print(get_kill_statistics())
 # print(top_killers())
-print(max_killer_within_hour(players=frozenset(["Yzoop"])))
+print(get_players(server="Ливония"))
