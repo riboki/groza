@@ -8,14 +8,14 @@ from groza_process import top_killers, get_players, favourite_weapon_per_player,
 
 
 st.set_page_config(
-        page_title=f"Groza: Октябрьский сезон 2023", page_icon="⚡",
+        page_title=f"Groza: Ноябрьский сезон 2023", page_icon="⚡",
 )
 selected_server = st.selectbox(
    "Выберите сервер для просмотра статистики",
    tuple(GROZA_SERVER_FILES.keys()),
    index=3,
 )
-st.header(f"⚡ Groza  {selected_server}: Октябрьский вайп 2023")
+st.header(f"⚡ Groza  {selected_server}: Ноябрьский вайп 2023")
 st.subheader("Стрелки и стреляемые этого сервера")
 
 selected_players = st.multiselect(

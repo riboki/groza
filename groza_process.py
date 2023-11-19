@@ -5,6 +5,7 @@ import pandas as pd
 GROZA_SERVER_FILES = {"Чернарусь 1": "chernarus_1.csv",
                       "Чернарусь 2": "chernarus_2.csv",
                       "Чернарусь 3": "chernarus_3.csv",
+                      "Чернорусь 5": "chernarus_5.csv",
                       "Ливония": "livonia.csv"}
 
 
