@@ -20,7 +20,8 @@ def parse_content(content: str) -> dict:
 def process_raw_log(source_log_path, destination_path):
     source_df = pd.read_csv(source_log_path)
     source_df = source_df[source_df.Author == "Integration"]
-    source_df.Date = pd.to_datetime(source_df['Date'], format='%m/%d/%Y %I:%M %p')
+    source_df.Date = pd.to_datetime(source_df['Date']).dt.strftime("%Y-%m-%d %H:%M:%S")
+    source_df.Date = pd.to_datetime(source_df.Date)
 
     result_df = source_df[source_df.Date > pd.to_datetime("2023-11-07 15:00:00")][["Date", "Content"]]
 
@@ -32,21 +33,21 @@ def process_raw_log(source_log_path, destination_path):
     result_df.to_csv(destination_path, index=False)
 
 
-process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-livonia [1135206174980050965] (after 2023-11-05).csv",
+process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-livonia [1135206174980050965] (after 2023-11-07).csv",
                 "data/livonia.csv")
 
 
-process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-1 [1066788171632889886] (after 2023-11-05).csv",
+process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-1 [1066788171632889886] (after 2023-11-07).csv",
                 "data/chernarus_1.csv")
 
 
-process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-2 [1070609632680235038] (after 2023-11-05).csv",
+process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-2 [1070609632680235038] (after 2023-11-07).csv",
                 "data/chernarus_2.csv")
 
 
-process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-3 [1124684878445817889] (after 2023-11-05).csv",
+process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-3 [1124684878445817889] (after 2023-11-07).csv",
                 "data/chernarus_3.csv")
 
 
-process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-5 [1173283269056397372] (after 2023-11-05).csv",
+process_raw_log("__raw_data/GROZA DAYZ - Основная информация - 💣killfeed-cherno-5 [1173283269056397372] (after 2023-11-07).csv",
                 "data/chernarus_5.csv")
